@@ -1,0 +1,7 @@
+This theoretical semester project involves the examination and the implementation of the numerical
+renormalisation group method (NRG). It is a technique which plays a key role in solving many-body systems
+that contain quantum impurities. In this report, the method was applied on the Anderson impurity model
+(AIM), giving numerical results which were achieved with the programming language "Python". The fact,
+that it is possible to obtain the energy spectrum of the AIM-hamiltonian for a many-body system with a huge
+number of component particles and states, is quite striking. Indeed, the lowest energy states showing an
+asymptotic behaviour will be presented further on.
