@@ -106,7 +106,7 @@ for itr in range(epochs):
     #if itr in loss_tracker:
     if (itr % 100) == 0:    
         print(train_loss.numpy())
-        plot_epochs(train_t, train_u, test_t, true_u, itr, NN_phys)#, f"Figures/PINN_training_itr_{itr}.png")
+        plot_epochs(train_t, train_u, test_t, true_u, itr, NN_phys)#, f"PINN_training_itr_{itr}.png")
         
     # early stopping
     wait += 1
@@ -119,7 +119,7 @@ for itr in range(epochs):
         break
 
 # Save weights
-# NN_phys.save_weights('Weights/toymodel_weights')
+# NN_phys.save_weights('toymodel_weights')
 
 ########################################################################
 
@@ -178,7 +178,7 @@ for itr in range(epochs):
     #if itr in loss_tracker:
     if (itr % 100) == 0:  
         print(loss_value.numpy())
-        plot_epochs(train_t, train_u, test_t, true_u, itr, NN_std)#, f"Figures/NN_training_itr_{itr}.png")
+        plot_epochs(train_t, train_u, test_t, true_u, itr, NN_std)#, f"NN_training_itr_{itr}.png")
         
     # early stopping
     # wait += 1

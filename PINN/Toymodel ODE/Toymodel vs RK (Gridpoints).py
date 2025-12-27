@@ -23,8 +23,8 @@ optm = tf.keras.optimizers.Adam(learning_rate = 0.001)
 NN = create_NN_model()
 
 # Load the previously saved weights for train_t = np.arange(0, 2+0.05, 0.05)
-# "transfer learning"
-NN.load_weights('Weights/toymodel_weights')
+# "transfer learning" from "Toymodel ODE.py"
+NN.load_weights('toymodel_weights')
 
 NN.summary()
 
@@ -80,4 +80,4 @@ for itr in range(len(collocation_list)):
     plt.ylabel('u', fontsize = 15)
     plt.title(f"Model comparison {itr+1}", fontsize = 15)
     #plt.show()
-    plt.savefig(fname=f"RK Comparison Figs/Model_comparison_{itr+1}.png", bbox_inches='tight')
+    plt.savefig(fname=f"Model_comparison_{itr+1}.png", bbox_inches='tight')
