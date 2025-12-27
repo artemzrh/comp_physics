@@ -1,9 +1,3 @@
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1' 
-
-import sys
-sys.path.append('C:/Users/mosar/Documents/CAS/Project/Playground/Toymodel')
-
 import numpy as np
 import tensorflow as tf
 #import random
@@ -84,7 +78,7 @@ def plot_bc_optim(bc1_list, bc2_list, regime, path="undefined"):
     if path == "undefined":
         plt.show()
     else:
-        plt.savefig(f"Figures/PINN_{regime}_position.png", bbox_inches='tight')
+        plt.savefig(f"PINN_{regime}_position.png", bbox_inches='tight')
 
     plt.figure(figsize = (10,8))
     plt.plot(bc2_list, color='r')
@@ -97,7 +91,7 @@ def plot_bc_optim(bc1_list, bc2_list, regime, path="undefined"):
     if path == "undefined":
         plt.show()
     else:
-        plt.savefig(f"Figures/PINN_{regime}_velocity.png", bbox_inches='tight')
+        plt.savefig(f"PINN_{regime}_velocity.png", bbox_inches='tight')
 
 def plot_loss(train_loss_record, regime, path="undefined"):
     
@@ -200,7 +194,7 @@ def train_NN_data_loss(epochs, optm, NN, func, bc, lambda1, train_t, train_u, da
     
         if (itr % 500) == 0:
             print(train_loss.numpy(), bc1.numpy()[0][0], bc2.numpy()[0])
-            plot_epochs_with_noise(train_t, train_u, data_t, data_u_noised, test_t_plot, true_u_plot, testing_t, itr, NN, regime, f"Figures/PINN_{regime}_training_{itr}.png")
+            plot_epochs_with_noise(train_t, train_u, data_t, data_u_noised, test_t_plot, true_u_plot, testing_t, itr, NN, regime, f"PINN_{regime}_training_{itr}.png")
             
     return train_loss_record, early_stop, bc1_list, bc2_list
 
@@ -297,9 +291,9 @@ for regime in regime_list:
     if early_break:
         epochs = early_break
 
-    plot_figs_with_noise(train_t, train_u, data_t, data_u_noised, test_t_plot, true_u_plot, RK_sol, testing_t, pred_u_pre_trained, regime, epochs, path=f"Figures/PINN_{regime}_fit_{epochs}.png")
+    plot_figs_with_noise(train_t, train_u, data_t, data_u_noised, test_t_plot, true_u_plot, RK_sol, testing_t, pred_u_pre_trained, regime, epochs, path=f"PINN_{regime}_fit_{epochs}.png")
 
-    plot_loss(train_loss_record, regime, f"Figures/PINN_loss_{regime}.png")
+    plot_loss(train_loss_record, regime, f"PINN_loss_{regime}.png")
     
     final_loss.append(train_loss_record[-1].numpy())
 

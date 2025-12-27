@@ -1,9 +1,3 @@
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1' 
-
-import sys
-sys.path.append('C:/Users/mosar/Documents/CAS/Project/Playground/Toymodel')
-
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
@@ -178,7 +172,7 @@ for itr in range(epochs+1):
         plt.ylabel('u', fontsize = 20)
         plt.title(f"Training step {itr}", fontsize = 20)
         #plt.show()
-        plt.savefig(f"Figures/Learnable Parameter/Learn_PINN_training_step_{itr}.png", bbox_inches='tight')
+        plt.savefig(f"Learn_PINN_training_step_{itr}.png", bbox_inches='tight')
 
 
 pred_u = NN.predict(testing_t)
@@ -192,7 +186,7 @@ plt.xlabel('t', fontsize = 15)
 plt.ylabel('u', fontsize = 15)
 plt.title(f"Model fit, {epochs} epochs", fontsize = 15)
 #plt.show()
-plt.savefig(f"Figures/Learnable Parameter/Learn_PINN_fit_{epochs}.png", bbox_inches='tight')        
+plt.savefig(f"Learn_PINN_fit_{epochs}.png", bbox_inches='tight')        
   
 plt.figure(figsize = (10,8))
 plt.title(r"Training of $\mu$", fontsize = 15)
@@ -204,7 +198,7 @@ plt.xlabel("Epoch", fontsize = 15)
 plt.ylabel(r"$\mu$", fontsize = 15)
 plt.legend(fontsize = 15)
 #plt.show()
-plt.savefig("Figures/Learnable Parameter/Learn_mu_vs_epoch.png", bbox_inches='tight')
+plt.savefig("Learn_mu_vs_epoch.png", bbox_inches='tight')
 
 plt.figure(figsize = (10,8))
 plt.plot(bc1_list, color='r')
@@ -214,7 +208,7 @@ plt.grid()
 plt.xticks(fontsize = 18)
 plt.yticks(fontsize = 18)
 plt.title("Initial position", fontsize = 20)
-plt.savefig("Figures/Learnable Parameter/Learn_PINN_position.png", bbox_inches='tight')
+plt.savefig("Learn_PINN_position.png", bbox_inches='tight')
 
 plt.figure(figsize = (10,8))
 plt.plot(bc2_list, color='r')
@@ -224,7 +218,7 @@ plt.grid()
 plt.xticks(fontsize = 18)
 plt.yticks(fontsize = 18)
 plt.title("Initial velocity", fontsize = 20)
-plt.savefig("Figures/Learnable Parameter/Learn_PINN_velocity.png", bbox_inches='tight')
+plt.savefig("Learn_PINN_velocity.png", bbox_inches='tight')
 
 plt.figure(figsize = (10,8))
 plt.plot(train_loss_record, color='r')
@@ -233,4 +227,4 @@ plt.ylabel('Loss', fontsize = 15)
 plt.ylim(ymin=0)
 plt.grid()
 plt.title("Model loss", fontsize = 15)
-plt.savefig("Figures/Learnable Parameter/Learn_PINN_loss.png", bbox_inches='tight')
+plt.savefig("Learn_PINN_loss.png", bbox_inches='tight')
