@@ -4,8 +4,6 @@ This project benchmarks **Quantum Machine Learning (QML)** against classical neu
 
 ## Key Results
 
-## Key Results
-
 * **Hybrid Efficiency (HQNN):**  
   The final hybrid model reached a test accuracy of **0.9765**, closely trailing the high-accuracy classical CNN benchmark of **0.9877**. Performance was stabilized by adding a **0.15 Dropout** layer before the VQC to prevent overfitting.
 
