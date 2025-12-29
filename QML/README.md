@@ -4,9 +4,17 @@ This project benchmarks **Quantum Machine Learning (QML)** against classical neu
 
 ## Key Results
 
-* **Hybrid Efficiency:** The **HQNN** model achieved a test accuracy of **0.9765**, closely trailing the classical CNN baseline of **0.9877**.
-* **Parameter Economy:** The variational quantum circuit (VQC) classified digits using only **298 quantum parameters**, whereas the classical CNN required **220,234 parameters**.
-* **Performance Gain:** Architectural optimizations, including non-linear feature mapping (BetterDownscale MLP) and dropout (0.15), raised standalone QML accuracy from **0.7075 to 0.9351**.
+## Key Results
+
+* **Hybrid Efficiency (HQNN):**  
+  The final hybrid model reached a test accuracy of **0.9765**, closely trailing the high-accuracy classical CNN benchmark of **0.9877**. Performance was stabilized by adding a **0.15 Dropout** layer before the VQC to prevent overfitting.
+
+* **Standalone QNN Optimization:**  
+  Standalone quantum performance was pushed from **0.7075** to **0.9351**. This was achieved by expanding the circuit to **10 qubits and 4 layers** and implementing a non-linear **BetterDownscale MLP** for optimized feature mapping.
+
+* **Parameter Economy:**  
+  The core **Variational Quantum Circuit (VQC)** performs high-level classification using only **298 quantum parameters**. While the total HQNN uses **55,434 parameters**, the majority are utilized by the classical front-end for initial data compression from **784 pixels to 8 features**.
+
 
 ## Benchmarks
 
