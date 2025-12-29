@@ -30,3 +30,5 @@ This project benchmarks **Quantum Machine Learning (QML)** against classical neu
 * **`baseline_dense_mnist.ipynb`**: Implementation of the fully-connected MLP baseline.
 * **`qml_mnist_exp_1.ipynb`**: Documentation of initial baseline QML models before optimization.
 * **`qml_mnist_exp_2.ipynb`**: Optimized QML experiments featuring HQNN and QCNN improvements.
+* **`combined_accuracy_exp1_adjusted.png`**: Plot visualizing initial benchmarking phase and information bottlenecks.
+* **`combined_accuracy_exp2.png`**: Plot illustrating the impact of the architectural overhaul on model accuracy.
